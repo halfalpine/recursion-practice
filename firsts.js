@@ -4,8 +4,12 @@ let a = [['apple', 'peach', 'pumpkin'], ['plum', 'pear', 'cherry'], ['grape', 'r
 let b = [['a', 'b'], ['c', 'd'], ['e', 'f']];
 let c = [];
 let d = [['five', 'plums'], ['four'], ['eleven', 'green', 'oranges']];
-let e = [[['five', 'plums'], four], ['eleven', 'green', 'oranges'], [['no'], 'more']];
+let e = [[['five', 'plums'], 'four'], ['eleven', 'green', 'oranges'], [['no'], 'more']];
 
 function firsts(arr){
-  
+  if (arr.length === 0) {
+    return [];
+  } else {
+    return arr[0][0].push(firsts(arr.slice(1)));
+  }
 }
