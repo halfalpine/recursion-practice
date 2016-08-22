@@ -10,7 +10,7 @@ function insertR(neew, old, arr) {
     if (arr[0] === old) {
       return Array.of(old).concat(neew).concat(arr.slice(1));
     } else {
-      [].push(arr[0]).push(insertR(neew, old, arr.slice(1)));
+      return [].concat(arr[0]).concat(insertR(neew, old, arr.slice(1)));
     }
   }
 }
